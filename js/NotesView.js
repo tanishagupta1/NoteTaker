@@ -12,7 +12,7 @@ export default class NotesView {
         </div>
         <div class="notes_preview">
             <input type="text" class="notes_head" placeholder="Enter a title..">
-            <textarea class="notes_body">Take Notes Efficiently...</textarea>
+            <textarea class="notes_body" placeholder="Enter note text.."></textarea>
         </div>`;
 
 
@@ -86,9 +86,10 @@ export default class NotesView {
         this.root.querySelector(".notes_head").value = note.title;
         this.root.querySelector(".notes_body").value = note.body;
 
-        this.root.querySelectorAll("notes_item").forEach(notesListItem => {
+        this.root.querySelectorAll(".notes_item").forEach(notesListItem => {
             notesListItem.classList.remove("notes_item_selected");
         });
+        
 
         this.root.querySelector(`.notes_item[data-note-id="${note.id}"]`).classList.add("notes_item_selected");
     }
