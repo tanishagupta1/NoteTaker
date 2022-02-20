@@ -11,7 +11,7 @@ export default class NotesView {
             <button type="button" class="notes_add">Add Note</button>
             <div class="notes_list"></div>
         </div>
-        <div class="notes_preview col-md-6">
+        <div class="notes_preview col">
             <input type="text" class="notes_head" placeholder="Enter a title..">
             <textarea class="notes_body" placeholder="Enter note text.."></textarea>
         </div>

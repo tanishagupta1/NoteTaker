@@ -92,6 +92,11 @@ body {
     margin: 7px;
   }
 }
+@media screen and (min-width: 1000px) {
+  .notes_preview{
+    display: inline-block;
+  }
+}
 @media screen and (max-width: 300px) {
   .notes_head {
     font-size: 1.3rem;
