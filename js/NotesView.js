@@ -6,15 +6,16 @@ export default class NotesView {
         this.OnNoteEdit = OnNoteEdit;
         this.onNoteDelete = onNoteDelete;
         this.root.innerHTML = `
-            <div class="notes_sidebar">
+        <div class="row">
+        <div class="notes_sidebar col-md-4">
             <button type="button" class="notes_add">Add Note</button>
             <div class="notes_list"></div>
         </div>
-        <div class="notes_preview">
+        <div class="notes_preview col-md-6">
             <input type="text" class="notes_head" placeholder="Enter a title..">
             <textarea class="notes_body" placeholder="Enter note text.."></textarea>
+        </div>
         </div>`;
-
 
         const btnAddnote = this.root.querySelector(".notes_add");
         const inptitle = this.root.querySelector(".notes_head");
@@ -81,15 +82,15 @@ export default class NotesView {
             });
         });
     }
-
-    updateActiveNote(note) {                            //defined while creating anote
+    //defined while creating a note
+    updateActiveNote(note) {
         this.root.querySelector(".notes_head").value = note.title;
         this.root.querySelector(".notes_body").value = note.body;
 
         this.root.querySelectorAll(".notes_item").forEach(notesListItem => {
             notesListItem.classList.remove("notes_item_selected");
         });
-        
+
 
         this.root.querySelector(`.notes_item[data-note-id="${note.id}"]`).classList.add("notes_item_selected");
     }
